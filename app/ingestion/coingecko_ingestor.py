@@ -2,7 +2,7 @@ from app.ingestion.base import BaseIngestor
 from app.schemas.coin_raw import CoinRaw
 import httpx
 
-class CoinPaprikaIngestor(BaseIngestor):  # or CoinGeckoIngestor
+class CoinGeckoIngestor(BaseIngestor):  # or CoinGeckoIngestor
     async def ingest(self, limit: int = 100) -> list[CoinRaw]:
         async with httpx.AsyncClient() as client:
             resp = await client.get("https://api.coinpaprika.com/v1/coins", params={"limit": limit})
@@ -10,4 +10,4 @@ class CoinPaprikaIngestor(BaseIngestor):  # or CoinGeckoIngestor
             return []
     
     def get_source_name(self) -> str:
-        return "coinpaprika"  # or "coingecko"
+        return "coingecko"  # or "coingecko"
