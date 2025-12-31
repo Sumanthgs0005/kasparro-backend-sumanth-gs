@@ -1,0 +1,6 @@
+# Example Terraform Variables File
+# Copy this file to terraform.tfvars and fill in your actual values
+# DO NOT commit terraform.tfvars to version control (it contains secrets)
+
+render_api_key = "your_render_api_key_here"
+owner_id       = "your_owner_id_here"
